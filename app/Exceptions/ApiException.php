@@ -11,7 +11,7 @@ class ApiException extends Exception
 {
     public function report(): void
     {
-        Mail::to('kemalyen@gmail.com')
+        Mail::to(env('email'))
             ->queue(new SendApiError($this->getMessage()));
 
     }
